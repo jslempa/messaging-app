@@ -1,5 +1,5 @@
-const db = require('../backend/db')
-const User = require('../backend/models/user')
+const db = require('../db')
+const User = require('../models/user')
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
