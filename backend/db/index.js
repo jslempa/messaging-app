@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 mongoose
-  .connect('mongodb://127.0.0.1:27017/messagingApp')
+  .connect('mongodb+srv://jslempa:thisismypassword1@student-cluster.m84wwej.mongodb.net/?retryWrites=true&w=majority&appName=student-cluster')
   .then(() => {
     console.log('Successfully connected to MongoDB.')
   })
