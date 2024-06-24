@@ -18,18 +18,14 @@ const Posts = (props) => {
         <div className='posts'>
             {
                 posts.map((post) => { 
-                    <div className='post-single'>
-                        
+                    <div className='post-single-card'>
+                        <h2 className='post-author'>{post.Author}</h2>
+                        <p className='post-content'>{post.Content}</p>
+                        {post.Attachments ? <img className='post-image' src={post.Attachments}/> : null}
                     </div>
                 
                 })
-           
-           
-           
-       
-            }    
-          
-
+            }   
         </div>
     ) : null
 }
