@@ -15,6 +15,8 @@ const authenticateUser = async (req, res) => {
 
         const tempToken = `${user._id}:${user.Username}:${Date.now()}`
 
+        const updatedUser = await User.findByIdAndUpdate(user._id, {Token: tempToken})
+
         return res.status(200).json({token: tempToken})
     } catch (error) {
         return res.status(500).json({error: error.message})
@@ -22,5 +24,6 @@ const authenticateUser = async (req, res) => {
 }
 
 module.exports = {
-    createUser
+    createUser,
+    authenticateUser
 }

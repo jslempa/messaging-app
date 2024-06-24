@@ -5,6 +5,7 @@ const logger = require('morgan')
 const bodyParser = require('body-parser')
 const postController = require('./controllers/postController')
 const commentController = require('./controllers/commentController')
+const userController = require('./controllers/userController')
 
 const PORT = process.env.PORT || 3001
 
@@ -33,3 +34,5 @@ app.get('/comments/:id', commentController.getCommentById)
 app.post('/comments', commentController.createComment)
 app.put('/comments/:id', commentController.updateComment)
 app.delete('/comments/:id', commentController.deleteComment)
+
+app.post('/login', userController.authenticateUser)
