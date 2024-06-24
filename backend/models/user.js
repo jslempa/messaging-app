@@ -10,7 +10,8 @@ const User = new Schema(
         Bio: {type: String, required: false},
         Followers: {type: Number, required: true},
         Following: {type: Number, required: true},
-        IsPrivate: {type: Boolean, required: false}
+        IsPrivate: {type: Boolean, required: false},
+        Token: {type: String, required: false}
     }, 
     {timestamps: true}
 )
