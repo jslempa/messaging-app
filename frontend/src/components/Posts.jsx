@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import Likes from './Likes'
-import Comments from './Comments'
+import SinglePost from './SinglePost'
 
 const Posts = (props) => {
 
@@ -29,15 +28,8 @@ const Posts = (props) => {
         <div className='posts'>
             {
                 posts.map((post) => ( 
-                    <div className='post-single-card' key={post._id}
-                        style={{border: '2px solid black'}}>
-                        <h3 className='post-author'>{post.Author}</h3>
-                        <p className='post-content'>{post.Content}</p>
-                        {post.Attachments ? <img className='post-image' src={post.Attachments}/> : null}
-                        <Likes likes={post.Likes}
-                               addLike={addLike}/>
-                        {/* <Comments/>        */}
-                    </div>                
+                    <SinglePost post={post}
+                                key={post._id}/>                
                 ))
             }   
         </div>
