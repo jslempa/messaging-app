@@ -1,7 +1,16 @@
 const Likes = (props) => {
 
+    console.log(props)
+
     return (
-        <div className="likes"></div>
+        <div className='likes'>
+            <div className='num-likes'>Likes: {props.likes}</div>
+            <div>
+            <label>+</label>
+            <button className="add-like-button"
+                    onClick = {props.addLike}>Add</button>
+            </div>
+        </div>
     )
 }
 
