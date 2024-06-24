@@ -14,28 +14,28 @@ const main = async () => {
     const posts = [
         {
             Content: 'Just hit 20 and finally decided to start that vegetable garden Ive always talked about. 🌱🍅 Anyone got tips on keeping the squirrels out? #GardeningLife #UrbanFarming',
-            Attacthments: '',
+            Attachments: '',
             Author: Tobias[0]._id,
             Likes: 0,
             Comments: ''
         },
         {
             Content: 'Celebrated my 30th by booking a solo trip to Japan! Cant wait to explore the temples and try all the sushi. 🍣✈️ #TravelGoals #30AndThriving',
-            Attacthments: '',
+            Attachments: '',
             Author: Jo[0]._id,
             Likes: 0,
             Comments: ''
         },
         {
             Content: 'Who else is excited about the new AI advancements? Spent the whole evening reading about the potential of GPT-4. 🤖📚 The future is here! #TechGeek #AIRevolution',
-            Attacthments: '',
+            Attachments: '',
             Author: Grace[0]._id,
             Likes: 0,
             Comments: ''
         },
         {
             Content: 'Finally got around to reading "Atomic Habits" and its a game changer. 🧠📖 Time to build some good habits and break the bad ones! #BookRecommendations #SelfImprovement',
-            Attacthments: '',
+            Attachments: '',
             Author: Darnell[0]._id,
             Likes: 0,
             Comments: ''
