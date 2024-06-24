@@ -32,7 +32,7 @@ Developing a social media app involves creating a platform where users can conne
 
 ![ERD](/mockTwitterERD.png)
 
-![ComponentHierarchyDiagram](project3.drawio2.png)
+![ComponentHierarchyDiagram](project3.drawio2.png) 
+![wireframe](/User-wireframe.png)
 
-![FrontEndUserPage](https://i.imgur.com/8egmfXF.png)
-![log-inPage](https://i.imgur.com/JNCjpmK.png)
+![FrontEndUserPage](https://i.imgur.com/8egmfXF.png) ![log-inPage](https://i.imgur.com/JNCjpmK.png)
