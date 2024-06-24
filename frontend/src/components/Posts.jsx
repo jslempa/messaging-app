@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import axios from 'axios'
 import Likes from './Likes'
 import Comments from './Comments'
 
