@@ -46,12 +46,27 @@ const deletePost = async (req, res) => {
         return res.status(500).send(error.message);
     }
 }
+const updatePost = async (req, res) => {
+    try {
+        let { id } = req.params;
+        let post = await Post.findByIdAndUpdate(id, req.body, { new: true })
+        if (post) {
+            return res.status(200).json(post)
+        }
+        throw new Error("Actor not found")
+    } catch (error) {
+        return res.status(500).send(error.message);
+    }
+}
+
+
 
 
 module.exports = {
     getAllPosts,
     getPostsById,
     createPost,
-    deletePost
+    deletePost,
+    updatePost
    
 }
