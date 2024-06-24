@@ -3,7 +3,7 @@ const db = require('./db')
 const cors = require('cors')
 const logger = require('morgan')
 const bodyParser = require('body-parser')
-const postController = require('..postController/controllers/postController')
+const postController = require('./controllers/postController')
 
 const PORT = process.env.PORT || 3001
 
@@ -23,3 +23,6 @@ app.listen(PORT, () => {
 })
 
 app.get('/posts', postController.getAllPosts)
+app.get('/posts/:id', postController.getPostsById)
+app.post('/posts', postController.createPost)
+app.delete('/post/:id', postController.deletePost)
