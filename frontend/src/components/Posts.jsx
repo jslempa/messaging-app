@@ -18,10 +18,6 @@ const Posts = (props) => {
         //console.log(posts) posts empty here
     }, [])
 
-    const addLike = () => {
-
-    } 
-
     console.log(posts) //posts populated here 
     
     return (
