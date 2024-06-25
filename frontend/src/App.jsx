@@ -5,6 +5,8 @@ import Likes from './components/Likes'
 import Main from './components/Main'
 import Posts from './components/Posts'
 import Header from './components/Header'
+import Home from './components/Home'
+import Nav from './components/Nav'
 import PostModal from './components/PostModal'
 
 function App() {
@@ -36,10 +38,13 @@ function App() {
 
   return (
     <div className='app'>
-      <Header/>
+      <Main>
       <button onClick={openModal}>Create Post</button>
-      <Main />       
       <PostModal isOpen={isModalOpen} onClose={closeModal}/>
+      <Routes>
+       <Route path="/" element={ <Home /> } />
+      </Routes>
+      </Main>      
     </div>
   )
 }
