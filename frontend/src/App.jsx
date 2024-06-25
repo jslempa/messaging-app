@@ -5,6 +5,7 @@ import Likes from './components/Likes'
 import Main from './components/Main'
 import Posts from './components/Posts'
 import Header from './components/Header'
+import PostModal from './components/PostModal'
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
     <div className='app'>
       <Header/>
       <Main />       
+      <PostModal />
     </div>
   )
 }
