@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import './PostModal.css'
 
-const PostModal = () => {
-
+const PostModal = ({isOpen, onClose}) => {
+    if (!isOpen) return null
 
     return (
         <div className='post-modal'>
@@ -10,6 +10,7 @@ const PostModal = () => {
                 <form>
                     <textarea placeholder='Content' />
                     <button type='submit'>Post</button>
+                    <button type='button' onClick={onClose}>Cancel</button>
                 </form>
             </div>
         </div>
