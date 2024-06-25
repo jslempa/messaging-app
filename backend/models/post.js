@@ -7,7 +7,7 @@ const Post = new Schema(
         Attachments: {type: String, required: false},
         Author: { type: Schema.Types.ObjectId, ref: 'UserID'},
         Likes: {type: Number, required: true},
-        Comments: {type: String, required: false}
+        Comments: [{type: Schema.Types.ObjectId, ref: 'CommentID', required: false}]
     }, 
     {timestamps: true}
 )

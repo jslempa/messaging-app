@@ -1,7 +1,14 @@
+const Header = (props) => {
 
-const Header = () => {
+    const isLoggedIn = props.isLoggedIn
+
+    
 
     return (
+        <div>
+            {isLoggedIn ? <h2>Welcome!</h2> : <h2>Create Account</h2>}
+            {isLoggedIn && (
+
         <div className="profile">
         <div className="image">
             {/* axios call for user's picture <img>picture</img> */}
@@ -19,12 +26,12 @@ const Header = () => {
                 following:
             </h3>   */}
         </div>
-
+                </div>
+            )}
         </div>
-
-
-
     )
-
 }
+
+
+
 export default Header
