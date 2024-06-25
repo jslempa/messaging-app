@@ -1,27 +1,24 @@
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const Header = (props) => {
-    const [user, setUser] = useState();
-    const [error, setError] = useState();
-    
+
+const Header = ({ userId }) => {
+    const [user, setUser] = useState([]);
+    const [error, setError] = useState(null);
+
     useEffect(() => {
         const getUser = async () => {
             try {
-                const response = await axios.get(`http://localhost:3001/users/:id`)
-                const currentUser = response.data
-                console.log(response.data)
-                setUser(currentUser);
+                const response = await axios.get(`http://localhost:3001/users/id/${userId}`);
+                setUser(response.data);
             } catch (err) {
                 setError(err.message);
             }
         };
-        
+
         getUser();
-    }, [username]);
-    
-    console.log(user)
+    }, [userId]);
+console.log(user)
     if (error) {
         return <div>Error: {error}</div>;
     }
@@ -32,16 +29,17 @@ const Header = (props) => {
 
     return (
         <div className="profile-header">
-            {/* <img src={user.Picture} alt={`${user.username}'s profile`} /> */}
-            <h1>{user.Username}</h1>
-            <p>{user.Email}</p>
-            <p>{user.Bio}</p>
-            <div>
-                <span>Followers: {user.Followers}</span>
-                <span>Following: {user.Following}</span>
+            <div className='user' key={user._id}>
+                <h2>{user.Username}</h2>
+                <p>{user.Email}</p>
+                <p>{user.Bio}</p>
+                <div className='follower'>
+                    <span>Followers: {user.Followers}</span>
+                    <span>Following: {user.Following}</span>
+                </div>
             </div>
         </div>
     );
 };
 
-export default Header;
+export default Header
