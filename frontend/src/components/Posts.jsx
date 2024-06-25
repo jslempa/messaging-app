@@ -16,7 +16,7 @@ const Posts = (props) => {
         }
         getPosts()
         //console.log(posts) posts empty here
-    }, [posts])
+    }, []) //putting posts in here makes the like button work but it runs an infinite GET loop
 
     //console.log(posts) //posts populated here 
     
