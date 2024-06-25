@@ -16,7 +16,7 @@ const Posts = (props) => {
         }
         getPosts()
         //console.log(posts) posts empty here
-    }, [])
+    }, [posts])
 
     console.log(posts) //posts populated here 
     
