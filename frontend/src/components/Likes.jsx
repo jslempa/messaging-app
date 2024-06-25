@@ -1,6 +1,6 @@
 const Likes = (props) => {
 
-    console.log(props)
+    //console.log(props)
 
     return (
         <div className='likes'>

@@ -16,7 +16,7 @@ const SinglePost = (props) => {
 
     const addLike = async () => {
         let currentLikes = props.post.Likes
-        console.log(currentLikes)
+        //console.log(currentLikes)
         const res = await axios.put(`http://localhost:3001/posts/${props.post._id}`, {
             Likes: currentLikes + 1
         })
@@ -30,7 +30,7 @@ const SinglePost = (props) => {
                 {props.post.Attachments ? <img className='post-image' src={props.post.Attachments}/> : null}
                 <Likes likes={props.post.Likes}
                        addLike={addLike} />
-                {/* <Comments/>        */}
+                <Comments/>       
             </div> 
         </div>
     )

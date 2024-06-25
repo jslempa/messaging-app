@@ -10,7 +10,7 @@ const Posts = (props) => {
         const getPosts = async () => {
             const res = await axios.get('http://localhost:3001/posts')
             const currentPosts = res.data
-            console.log(currentPosts)
+            //console.log(currentPosts)
             setPosts(currentPosts)
             //console.log(posts) posts empty here
         }
@@ -18,7 +18,7 @@ const Posts = (props) => {
         //console.log(posts) posts empty here
     }, [posts])
 
-    console.log(posts) //posts populated here 
+    //console.log(posts) //posts populated here 
     
     return (
         <div className='posts'>
