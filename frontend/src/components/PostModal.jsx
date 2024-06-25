@@ -1,15 +1,17 @@
 import { useState, useEffect } from 'react'
-import './Post'
+import './PostModal.css'
 
 const PostModal = () => {
 
 
     return (
         <div className='post-modal'>
-            <form>
-                <textarea placeholder='Content' />
-                <button type='submit'>Post</button>
-            </form>
+            <div className='card'>
+                <form>
+                    <textarea placeholder='Content' />
+                    <button type='submit'>Post</button>
+                </form>
+            </div>
         </div>
     )
 }
