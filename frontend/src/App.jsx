@@ -5,7 +5,8 @@ import Likes from './components/Likes'
 import Main from './components/Main'
 import Posts from './components/Posts'
 import Header from './components/Header'
-
+import Home from './components/Home'
+import Nav from './components/Nav'
 function App() {
 
 //   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -25,8 +26,11 @@ function App() {
   
   return (
     <div className='app'>
-      <Header/>
-      <Main />       
+      <Main>
+      <Routes>
+       <Route path="/" element={ <Home /> } />
+      </Routes>
+      </Main>      
     </div>
   )
 }
