@@ -5,9 +5,9 @@ import { useState, useEffect } from 'react'
 
 const SinglePost = (props) => {
 
-    useEffect(() => {
-        console.log('hi')
-    }, [])
+    // useEffect(() => {
+    //     const res = await axios.get(`http://localhost:3001/comments/`)
+    // }, [])
 
     //console.log(props.post)
     //console.log(props.post.Author)
