@@ -6,7 +6,7 @@ import Main from './components/Main'
 import Posts from './components/Posts'
 import Header from './components/Header'
 import Home from './components/Home'
-import Nav from './components/Nav'
+
 function App() {
 
 //   const [isLoggedIn, setIsLoggedIn] = useState(false)
