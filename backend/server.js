@@ -32,6 +32,7 @@ app.delete('/post/:id', postController.deletePost)
 
 app.get('/comments', commentController.getAllComments)
 app.get('/comments/:id', commentController.getCommentById)
+app.get('/comments/:parentPostId', commentController.getCommentsByParentPost)
 app.post('/comments', commentController.createComment)
 app.put('/comments/:id', commentController.updateComment)
 app.delete('/comments/:id', commentController.deleteComment)
