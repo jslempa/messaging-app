@@ -41,9 +41,6 @@ function App() {
       <Main>
       <button onClick={openModal}>Create Post</button>
       <PostModal isOpen={isModalOpen} onClose={closeModal}/>
-      <Routes>
-       <Route path="/" element={ <Home /> } />
-      </Routes>
       </Main>      
     </div>
   )
