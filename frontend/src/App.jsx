@@ -24,11 +24,22 @@ function App() {
 //       setUserName(username)
 //   }
   
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const openModal = () => {
+      setIsModalOpen(true)
+  }
+
+  const closeModal = () => {
+      setIsModalOpen(false)
+  }
+
   return (
     <div className='app'>
       <Header/>
+      <button onClick={openModal}>Create Post</button>
       <Main />       
-      <PostModal />
+      <PostModal isOpen={isModalOpen} onClose={closeModal}/>
     </div>
   )
 }
