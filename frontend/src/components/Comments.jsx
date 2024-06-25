@@ -1,10 +1,8 @@
-import Likes from './Likes'
-
 const Comments = (props) => {
 
     return (
-        <div className="comments">
-            <Likes/>
+        <div className='comments'>
+            <p>I am a comment</p>
         </div>
         
     )
