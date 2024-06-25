@@ -1,37 +1,46 @@
-const Header = (props) => {
 
-    //const isLoggedIn = props.isLoggedIn
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
+const Header = ({ username }) => {
+    const [user, setUser] = useState();
+    const [error, setError] = useState();
     
+    useEffect(() => {
+        const fetchUserData = async () => {
+            try {
+                const response = await axios.get(`http://localhost:3001/users/:id`);
+                setUser(response.data);
+                console.log(response.data)
+            } catch (err) {
+                setError(err.message);
+            }
+        };
+        
+        fetchUserData();
+    }, [username]);
+    
+    console.log(user)
+    if (error) {
+        return <div>Error: {error}</div>;
+    }
+
+    if (!user) {
+        return <div>Loading...</div>;
+    }
 
     return (
-        // <div>
-        //     {isLoggedIn ? <h2>Welcome!</h2> : <h2>Create Account</h2>}
-        //     {isLoggedIn && (
-
-        <div className="profile">
-        <div className="image">
-            {/* axios call for user's picture <img>picture</img> */}
+        <div className="profile-header">
+            <img src={user.Picture} alt={`${user.username}'s profile`} />
+            <h1>{user.Username}</h1>
+            <p>{user.Email}</p>
+            <p>{user.Bio}</p>
+            <div>
+                <span>Followers: {user.Followers}</span>
+                <span>Following: {user.Following}</span>
+            </div>
         </div>
-        <div className="contact-info">
-             {/* axios call for user's email */}
-        </div>
-        <div className="bio">
-            {/* axios call for user's bio <h4>bio</h4>*/}
-        </div>
-        <div className="following">
-            {/* axios call for followers
-             <h3>
-                followers:
-                following:
-            </h3>   */}
-        </div>
-                </div>
-        //     )}
-        // </div>
-    )
-}
+    );
+};
 
-
-
-export default Header
+export default Header;
