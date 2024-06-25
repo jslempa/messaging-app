@@ -38,9 +38,10 @@ function App() {
 
   return (
     <div className='app'>
-      <Main>
       <button onClick={openModal}>Create Post</button>
       <PostModal isOpen={isModalOpen} onClose={closeModal}/>
+      <Main>
+      
       </Main>      
     </div>
   )
