@@ -27,6 +27,7 @@ app.listen(PORT, () => {
 app.get('/posts', postController.getAllPosts)
 app.get('/posts/:id', postController.getPostsById)
 app.post('/posts', postController.createPost)
+app.put('/posts/:id', postController.updatePost)
 app.delete('/post/:id', postController.deletePost)
 
 app.get('/comments', commentController.getAllComments)
@@ -42,3 +43,4 @@ app.post('/users', userController.createUser)
 app.put('/users/:id', userController.updateUser)
 app.get('/privateUsers', userController.getPrivateUsers)
 app.delete('/users/:id', userController.deleteUser)
+app.get('/users/:id', userController.getUserById)
