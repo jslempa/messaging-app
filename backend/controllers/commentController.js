@@ -22,6 +22,19 @@ const getCommentById = async (req, res) => {
     }
 }
 
+const getCommentsByParentPost = async (req, res) => {
+    try {
+        const { parentPostId } = req.params
+        const comments = await Comment.find({ParentPost: parentPostId})
+        if (comments) {
+            return res.json(comments)
+        }
+        return res.status(404).send('Comments not found')
+    } catch (error) {
+        return res.status(500).send(error.message)
+    }
+}
+
 const createComment = async (req, res) => {
     try {
         const comment = await new Comment(req.body)
@@ -63,6 +76,7 @@ const deleteComment = async (req, res) => {
 module.exports = {
     getAllComments,
     getCommentById,
+    getCommentsByParentPost,
     createComment,
     updateComment,
     deleteComment
