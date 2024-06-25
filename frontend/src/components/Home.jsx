@@ -4,7 +4,7 @@ const Home = (props) => {
 
     return (
         <div className="home">
-            <h2>This is home</h2>
+            <h2>Home</h2>
             <Posts/>
         </div>
     )

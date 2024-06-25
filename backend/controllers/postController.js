@@ -16,7 +16,7 @@ const getPostsById = async (req, res) => {
         if (post) {
             return res.json(post);
         }
-        return res.status(404).send('Actor with the specified ID does not exists');
+        return res.status(404).send('Post with the specified ID does not exists');
     } catch (error) {
         return res.status(500).send(error.message);
     }
@@ -24,7 +24,7 @@ const getPostsById = async (req, res) => {
 
 const createPost = async (req, res) => {
     try {
-        const post = await new Actor(req.body)
+        const post = await new Post(req.body)
         await post.save()
         return res.status(201).json({
             post,
@@ -39,9 +39,9 @@ const deletePost = async (req, res) => {
         const { id } = req.params;
         const deleted = await Post.findByIdAndDelete(id)
         if (deleted) {
-            return res.status(200).send("Actor deleted");
+            return res.status(200).send("Post deleted");
         }
-        throw new Error("Actor not found");
+        throw new Error("Post not found");
     } catch (error) {
         return res.status(500).send(error.message);
     }
@@ -53,7 +53,7 @@ const updatePost = async (req, res) => {
         if (post) {
             return res.status(200).json(post)
         }
-        throw new Error("Actor not found")
+        throw new Error("Post not found")
     } catch (error) {
         return res.status(500).send(error.message);
     }
