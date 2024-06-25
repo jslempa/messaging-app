@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
-import Likes from './Likes'
-import Comments from './Comments'
+import axios from 'axios'
+import SinglePost from './SinglePost'
 
 const Posts = (props) => {
 
@@ -8,26 +8,28 @@ const Posts = (props) => {
 
     useEffect(() => {
         const getPosts = async () => {
-            const res = await axios.get(`${BASE_URL}`)
-            setPosts(res)
+            const res = await axios.get('http://localhost:3001/posts')
+            const currentPosts = res.data
+            //console.log(currentPosts)
+            setPosts(currentPosts)
+            //console.log(posts) posts empty here
         }
         getPosts()
-    }, [])
+        //console.log(posts) posts empty here
+    }, [posts])
+
+    //console.log(posts) //posts populated here 
     
-    return posts ? (
+    return (
         <div className='posts'>
             {
-                posts.map((post) => { 
-                    <div className='post-single-card'>
-                        <h2 className='post-author'>{post.Author}</h2>
-                        <p className='post-content'>{post.Content}</p>
-                        {post.Attachments ? <img className='post-image' src={post.Attachments}/> : null}
-                    </div>
-                
-                })
+                posts.map((post) => ( 
+                    <SinglePost post={post}
+                                key={post._id}/>                
+                ))
             }   
         </div>
-    ) : null
+    )
 }
 
 export default Posts
