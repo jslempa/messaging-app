@@ -8,7 +8,6 @@ const Main = (props) => {
     return (
         <div className="main">
             <Header />
-            <Nav/>
             <Home/>
         </div>
     )
