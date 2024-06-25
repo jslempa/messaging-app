@@ -6,8 +6,8 @@ const Header = (props) => {
 
     return (
         <div>
-            {isLoggedIn ? <h2>Welcome!</h2> : <h2>Create Account</h2>}
-            {isLoggedIn && (
+            {/* {isLoggedIn ? <h2>Welcome!</h2> : <h2>Create Account</h2>}
+            {isLoggedIn && ( */}
 
         <div className="profile">
         <div className="image">
@@ -27,7 +27,7 @@ const Header = (props) => {
             </h3>   */}
         </div>
                 </div>
-            )}
+            {/* )} */}
         </div>
     )
 }
