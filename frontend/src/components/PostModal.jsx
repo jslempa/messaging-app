@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import './PostModal.css'
+
 
 const PostModal = ({isOpen, onClose}) => {
     if (!isOpen) return null
