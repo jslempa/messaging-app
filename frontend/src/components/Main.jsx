@@ -20,7 +20,6 @@ const Main = (props) => {
 
     return (
         <div className="main">
-            <Header />
             <Nav onOpenModal={openModal} />
             <PostModal isOpen={isModalOpen} onClose={closeModal}/>
             <Posts/>

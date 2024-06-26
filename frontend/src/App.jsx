@@ -8,7 +8,7 @@ import Header from './components/Header'
 import Home from './components/Home'
 import Nav from './components/Nav'
 import PostModal from './components/PostModal'
-
+import UserProfile from './components/UserProfile'
 function App() {
 
 //   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -34,6 +34,7 @@ function App() {
       <Main>
       <Routes>
           <Route path="/" element={ <Home /> } />
+          <Route path="/userprofile" element={ <UserProfile />} />
         </Routes>
       </Main>      
     </div>

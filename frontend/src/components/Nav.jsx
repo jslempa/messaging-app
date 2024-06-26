@@ -21,6 +21,11 @@ const Nav = ({ onOpenModal }) => {
           <span>Timeline</span>
         </div>
       </Link>
+      <Link to="/userprofile">
+        <div className="nav-item">
+          <span>User Profile</span>
+        </div>
+      </Link>
     </div>
   )
 }
