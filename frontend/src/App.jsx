@@ -31,12 +31,12 @@ function App() {
     
     <div className='app'>
      
-      <Main>
+      <Main/>
       <Routes>
           <Route path="/" element={ <Home /> } />
           <Route path="/userprofile" element={ <UserProfile />} />
         </Routes>
-      </Main>      
+        
     </div>
     
   )

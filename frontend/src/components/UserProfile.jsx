@@ -3,6 +3,7 @@ import axios from 'axios'
 import profilePic from '../assets/images/profilePic.png'
 
 
+
 const UserProfile = ({ userId }) => {
     const [user, setUser] = useState([])
     const [error, setError] = useState(null)
