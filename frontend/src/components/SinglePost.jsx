@@ -38,7 +38,7 @@ const SinglePost = (props) => {
 
     const deletePost = async () => {
         // console.log(props.post._id) works
-        await axios.delete(`http://localhost:3001/posts/${props.post._id}`)
+        await axios.delete(`http://localhost:3001/post/${props.post._id}`)
         console.log('post deleted')
     }
 
