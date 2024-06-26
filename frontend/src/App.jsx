@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import {Route, Routes } from 'react-router-dom'
 import Likes from './components/Likes'
 import Main from './components/Main'
 import Posts from './components/Posts'
@@ -37,7 +37,7 @@ function App() {
   }
 
   return (
-    <Router>
+   
     <div className='app'>
     <Nav onOpenModal={openModal} />
       <button onClick={openModal}>Create Post</button>
@@ -48,7 +48,6 @@ function App() {
         </Routes>
       </Main>      
     </div>
-    </Router>
   )
 }
 

@@ -7,8 +7,13 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 const main = async () => {
     const Jo = await User.find({ Username: 'JoSlempa' })
-    const Grace = await User.find({ Username: 'GraceMadikaegbu' })
     const joPost = await Post.find({ Author: Jo[0]._id})
+    const Grace = await User.find({ Username: 'GraceMadikaegbu' })
+    const gracePost = await Post.find({ Author: Grace[0]._id})
+    const Tobias = await User.find({ Username: 'TobiasDodge' })
+    const tobiasPost = await Post.find({ Author: Tobias[0]._id})
+    const Darnell = await User.find({ Username: 'DarnellRaymond' })
+    const darnellPost = await Post.find({ Author: Darnell[0]._id})
 
     const comments = [
         {
