@@ -1,10 +1,10 @@
-const Home = (props) => {
+const Header = (props) => {
 
     return (
         <div className="home">
-            <h2>Home</h2>
+            <h2>Header</h2>
         </div>
     )
 }
 
-export default Home
+export default Header
