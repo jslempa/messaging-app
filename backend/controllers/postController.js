@@ -59,6 +59,21 @@ const updatePost = async (req, res) => {
     }
 }
 
+const getPostsByAuthor = async (req, res) => {
+    try {
+        let { id } = req.params
+        let post = await Post.find({Author: id})
+
+        if(!post) {
+            return res.status(404).send({'error': "no posts found by user"})
+        }
+
+        return res.status(200).send(post)
+    } catch (error) {
+        return res.status(500).send(error.message)
+    }
+}
+
 
 
 
@@ -67,6 +82,6 @@ module.exports = {
     getPostsById,
     createPost,
     deletePost,
-    updatePost
-   
+    updatePost,
+    getPostsByAuthor
 }

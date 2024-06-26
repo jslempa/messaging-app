@@ -9,6 +9,10 @@ import Home from './components/Home'
 import Nav from './components/Nav'
 import PostModal from './components/PostModal'
 import UserProfile from './components/UserProfile'
+
+import HomePage from './pages/HomePage'
+import UserPage from './pages/UserPage'
+
 function App() {
 
 //   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -31,10 +35,10 @@ function App() {
     
     <div className='app'>
      
-      <Main/>
+      
       <Routes>
-          <Route path="/" element={ <Home /> } />
-          <Route path="/userprofile" element={ <UserProfile />} />
+          <Route path="/" element={ <HomePage /> } />
+          <Route path="/userprofile" element={ <UserPage />} />
         </Routes>
         
     </div>

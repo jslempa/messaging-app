@@ -8,7 +8,7 @@ const Posts = (props) => {
 
     useEffect(() => {
         const getPosts = async () => {
-            const res = await axios.get('http://localhost:3001/posts')
+            const res = await axios.get(`http://localhost:3001/${props.endpoint}`)
             const currentPosts = res.data
             setPosts(currentPosts)
             //console.log(posts) posts empty here
