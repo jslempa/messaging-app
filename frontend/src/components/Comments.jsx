@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 const Comments = (props) => {
 
     const [comments, setComments] = useState([])
+    const [author, setAuthor] = useState('')
 
     //const [postId, setPostId] = useState('')
 
@@ -13,6 +14,8 @@ const Comments = (props) => {
 
         const getComments = async () => {
             const res = await axios.get(`http://localhost:3001/comments/parent/${props.postId}`)
+            //const getUser = await axios.get(`http://localhost:3001/users/id/${res.data.Author}`)
+            //setAuthor(getUser.data.Username)
             // const res = await axios.get(`http://localhost:3001/comments`)
             console.log(res)
             const currentComments = res.data
@@ -35,7 +38,7 @@ const Comments = (props) => {
                     comments.map((comment) => (
                         <li className='single-comment'
                             key={comment._id}>
-                        {comment ? comment.Content : null}
+                        {author}: {comment ? comment.Content : null}
                         </li>
                     ))
                 }

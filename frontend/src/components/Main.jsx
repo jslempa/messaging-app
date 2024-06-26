@@ -4,7 +4,7 @@ import TBD from './TBD'
 import Header from './Header'
 import { useState } from 'react'
 import PostModal from './PostModal'
-
+import Posts from './Posts'
 
 const Main = (props) => {
 
@@ -23,6 +23,7 @@ const Main = (props) => {
             <Header />
             <Nav onOpenModal={openModal} />
             <PostModal isOpen={isModalOpen} onClose={closeModal}/>
+            <Posts/>
         </div>
     )
 }
