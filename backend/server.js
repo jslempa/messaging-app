@@ -29,6 +29,7 @@ app.get('/posts/:id', postController.getPostsById)
 app.post('/posts', postController.createPost)
 app.put('/posts/:id', postController.updatePost)
 app.delete('/post/:id', postController.deletePost)
+app.get('/posts/author/:id', postController.getPostsByAuthor)
 
 app.get('/comments', commentController.getAllComments)
 app.get('/comments/parent/:parentPostId', commentController.getCommentsByParentPost)
