@@ -26,21 +26,11 @@ function App() {
 //       setUserName(username)
 //   }
   
-  const [isModalOpen, setIsModalOpen] = useState(false)
-
-  const openModal = () => {
-      setIsModalOpen(true)
-  }
-
-  const closeModal = () => {
-      setIsModalOpen(false)
-  }
 
   return (
     
     <div className='app'>
-    <Nav onOpenModal={openModal} />
-      <PostModal isOpen={isModalOpen} onClose={closeModal}/>
+     
       <Main>
       <Routes>
           <Route path="/" element={ <Home /> } />
