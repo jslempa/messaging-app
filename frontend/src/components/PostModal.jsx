@@ -11,7 +11,15 @@ const PostModal = ({isOpen, onClose}) => {
     const handlePost = async (e) => {
         e.preventDefault()
 
-        //const response = await axios.post('http://localhost:5000/posts', { postContent, userID })
+        const response = await axios.post('http://localhost:3001/posts', 
+            {
+                Content: postContent,
+                Attachments: "",
+                Author: userID,
+                Likes: 0,
+                Comments: []
+            })
+
         console.log(postContent)
         console.log(userID)
         onClose()
