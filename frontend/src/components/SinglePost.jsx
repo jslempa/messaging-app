@@ -5,6 +5,8 @@ import { useState, useEffect } from 'react'
 
 const SinglePost = (props) => {
 
+    console.log(props.post._id)
+
     // useEffect(() => {
     //     const res = await axios.get(`http://localhost:3001/comments/`)
     // }, [])
@@ -34,6 +36,12 @@ const SinglePost = (props) => {
         window.location.reload()
     }
 
+    const deletePost = async () => {
+        // console.log(props.post._id) works
+        await axios.delete(`http://localhost:3001/posts/${props.post._id}`)
+        console.log('post deleted')
+    }
+
     const formatAuthor = async () => {
         const res = await axios.get(`http://localhost:3001/users/id/${props.post.Author}`)
         setAuthor(res.data.Username)
@@ -54,7 +62,8 @@ const SinglePost = (props) => {
                 {props.post.Attachments ? <img className='post-image' src={props.post.Attachments}/> : null}
                 <Likes likes={props.post.Likes}
                        addLike={addLike} />
-                <Comments postId={props.post._id}/>       
+                <Comments postId={props.post._id}/>    
+                <button onClick={deletePost}>Delete Post</button>
             </div> 
         </div>
     )

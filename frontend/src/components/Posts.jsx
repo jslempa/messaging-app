@@ -10,7 +10,6 @@ const Posts = (props) => {
         const getPosts = async () => {
             const res = await axios.get('http://localhost:3001/posts')
             const currentPosts = res.data
-            //console.log(currentPosts)
             setPosts(currentPosts)
             //console.log(posts) posts empty here
         }
@@ -33,5 +32,3 @@ const Posts = (props) => {
 }
 
 export default Posts
-
-// http://127.0.0.1:3001
