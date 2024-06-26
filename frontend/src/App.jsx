@@ -40,7 +40,6 @@ function App() {
     
     <div className='app'>
     <Nav onOpenModal={openModal} />
-      <button onClick={openModal}>Create Post</button>
       <PostModal isOpen={isModalOpen} onClose={closeModal}/>
       <Main>
       <Routes>
