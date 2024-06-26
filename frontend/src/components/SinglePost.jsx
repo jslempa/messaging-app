@@ -1,6 +1,7 @@
 import axios from 'axios'
 import Likes from './Likes'
 import Comments from './Comments'
+import CommentModal from './CommentModal'
 import { useState, useEffect } from 'react'
 
 const SinglePost = (props) => {
@@ -63,6 +64,8 @@ const SinglePost = (props) => {
                 <Likes likes={props.post.Likes}
                        addLike={addLike} />
                 <Comments postId={props.post._id}/>    
+                <CommentModal postId={props.post._id}/>
+
                 <button onClick={deletePost}>Delete Post</button>
             </div> 
         </div>
