@@ -23,6 +23,8 @@ const SinglePost = (props) => {
 
     //console.log(author)
 
+    const [author, setAuthor] = useState('')
+
     const addLike = async () => {
         let currentLikes = props.post.Likes
         //console.log(currentLikes)
@@ -30,12 +32,24 @@ const SinglePost = (props) => {
             Likes: currentLikes + 1
         })
         window.location.reload()
-    } 
+    }
+
+    const formatAuthor = async () => {
+        const res = await axios.get(`http://localhost:3001/users/id/${props.post.Author}`)
+        setAuthor(res.data.Username)
+        //console.log(props.post.Author)
+        //console.log(res.data.Username)
+        console.log(author)
+    }
+
+    useEffect(() => {
+        formatAuthor()
+    }, [])
 
     return (
         <div className='single-post'>
             <div className='post-single-card' style={{border: '2px solid black'}}>
-                <h3 className='post-author'>{props.post.Author}</h3>
+                <h3 className='post-author'>{author}</h3>
                 <p className='post-content'>{props.post.Content}</p>
                 {props.post.Attachments ? <img className='post-image' src={props.post.Attachments}/> : null}
                 <Likes likes={props.post.Likes}
