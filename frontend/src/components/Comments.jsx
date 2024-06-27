@@ -49,8 +49,7 @@ const Comments = (props) => {
                 {
                     comments.map((comment) => (
                         <li className='single-comment'
-                            key={comment._id}
-                            style={{border: '2px solid black'}}>
+                            key={comment._id}>
                         {authors[comment._id]}: {comment ? comment.Content : null}
                         <button className='delete-comment-button'
                                 id={comment._id}
