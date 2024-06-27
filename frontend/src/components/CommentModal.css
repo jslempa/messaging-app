@@ -1,0 +1,52 @@
+.comment-component {
+    margin-top: 10px;
+  }
+  
+  .comment-card {
+    background-color: #f5f6f7;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  .comment-card form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .comment-card input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+  }
+  
+  .comment-card button {
+    background-color: #007bff;
+    border: none;
+    display: flex;
+    align-items: center;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    margin: auto;
+    width: 100px;
+    height: 12px;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .comments {
+    margin-top: 10px;
+  }
+  
+  .comments-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  .single-comment {
+    background-color: #f0f2f5;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+ 
