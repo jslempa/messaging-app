@@ -31,10 +31,15 @@ const Comments = (props) => {
         setAuthors(authorsData)
     }
 
-    useEffect(() => {
+    const deleteComment = async (event) => {
+        await axios.delete(`http://localhost:3001/comments/${event.target.id}`)
+        console.log('Comment deleted')        
+    }
 
+    useEffect(() => {
         getComments()
     },[])
+
     console.log(comments)
 
     return (
@@ -47,12 +52,14 @@ const Comments = (props) => {
                             key={comment._id}
                             style={{border: '2px solid black'}}>
                         {authors[comment._id]}: {comment ? comment.Content : null}
+                        <button className='delete-comment-button'
+                                id={comment._id}
+                                onClick={deleteComment}>Delete Comment</button>
                         </li>
                     ))
                 }
             </ul>
-        </div>
-        
+        </div>        
     )}
 
 export default Comments

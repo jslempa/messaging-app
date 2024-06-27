@@ -12,24 +12,9 @@ import UserProfile from './components/UserProfile'
 
 import HomePage from './pages/HomePage'
 import UserPage from './pages/UserPage'
+import LoginPage from './pages/LoginPage'
 
 function App() {
-
-//   const [isLoggedIn, setIsLoggedIn] = useState(false)
-//   const [userName, setUserName] = useState('')
-
-//   useEffect(() => {
-//     const token = localStorage.getItem('token')
-//     if (token) {
-//         setIsLoggedIn(true)
-//     }
-// }, [])
-
-//   const handleLogin = (loggedIn, username) => {
-//       setIsLoggedIn(loggedIn)
-//       setUserName(username)
-//   }
-  
 
   return (
     
@@ -39,6 +24,7 @@ function App() {
       <Routes>
           <Route path="/" element={ <HomePage /> } />
           <Route path="/userprofile" element={ <UserPage />} />
+          <Route path="/login" element={ <LoginPage/> } />
         </Routes>
         
     </div>
