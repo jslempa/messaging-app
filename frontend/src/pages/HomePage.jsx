@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Posts from '../components/Posts'
 import Main from '../components/Main'
-import '../App.css'
+import './HomeUser.css'
 
 const HomePage = (props) => {
 
