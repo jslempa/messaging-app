@@ -1,4 +1,5 @@
 const User = require('../models/user')
+const crypto = require('crypto')
 
 const getAllUsers = async (req, res) => {
     try {
@@ -99,14 +100,34 @@ const authenticateUser = async (req, res) => {
         const user = await User.findOne({Username: username, Password: password})
 
         if(!user) {
-            return res.status(404).json({error: 'User not found'})
+            return res.status(401).json({error: 'Invalid credentials'})
         }
 
-        const tempToken = `${user._id}:${user.Username}:${Date.now()}`
+        const length = 32
+        const bytes = Math.ceil(length * 3/4)
+        const token = crypto.randomBytes(bytes).toString('base64').slice(0, length).replace(/\+/g, '0').replace(/\//g, '0')
 
-        const updatedUser = await User.findByIdAndUpdate(user._id, {Token: tempToken})
+        const updatedUser = await User.findByIdAndUpdate(user._id, {Token: token})
 
-        return res.status(200).json({token: tempToken})
+        return res.status(200).json({token: token})
+    } catch (error) {
+        return res.status(500).json({error: error.message})
+    }
+}
+
+const getUserByToken = async (req, res) => {
+    try {
+        const Token = req.get("Token")
+
+        const user = await User.findOne({Token: Token})
+
+        console.log(user)
+
+        if(!user) {
+            return res.status(401).json({"error": "You are not authorized to view this!"})
+        }
+
+        return res.status(200).json(user)
     } catch (error) {
         return res.status(500).json({error: error.message})
     }
@@ -120,5 +141,6 @@ module.exports = {
     getPrivateUsers,
     updateUser,
     deleteUser,
-    getUserById
+    getUserById,
+    getUserByToken
 }

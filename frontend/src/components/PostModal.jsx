@@ -6,6 +6,7 @@ const PostModal = ({isOpen, onClose}) => {
     if (!isOpen) return null
 
     const [postContent, setPostContent] = useState('')
+    const [attachmentURL, setAttachmentURL] = useState('')
     const [userID, setUserID] = useState('')
 
     const handlePost = async (e) => {
@@ -14,7 +15,7 @@ const PostModal = ({isOpen, onClose}) => {
         const response = await axios.post('http://localhost:3001/posts', 
             {
                 Content: postContent,
-                Attachments: "",
+                Attachments: attachmentURL,
                 Author: userID,
                 Likes: 0,
                 Comments: []
@@ -33,6 +34,10 @@ const PostModal = ({isOpen, onClose}) => {
         setUserID(e.target.value)
     }
 
+    const handleURL = (e) => {
+        setAttachmentURL(e.target.value)
+    }
+
     return (
         <div className='post-modal'>
             <div className='card'>
@@ -46,6 +51,12 @@ const PostModal = ({isOpen, onClose}) => {
                     <textarea placeholder='Content' 
                     value={postContent}
                     onChange={handleChange}
+                    />
+
+                    <input type="text"
+                    placeholder='Attachment URL'
+                    value={attachmentURL}
+                    onChange={handleURL}
                     />
 
                     <button type='submit'>Post</button>
