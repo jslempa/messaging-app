@@ -6,9 +6,8 @@ const Likes = (props) => {
         <div className='likes'>
             <div className='num-likes'>Likes: {props.likes}</div>
             <div>
-            <label>+</label>
-            <button className='add-like-button'
-                    onClick = {props.addLike}>
+                <button className='add-like-button'
+                        onClick = {props.addLike}>
                         <span>+</span>Like</button>
             </div>
         </div>
