@@ -4,6 +4,7 @@ import profilePic from '../assets/images/profilePic.png'
 import Nav from '../components/Nav'
 import PostModal from '../components/PostModal'
 import Posts from '../components/Posts'
+import './UserPage.css'
 
 
 const UserPage = ({ userId }) => {
@@ -43,27 +44,34 @@ const UserPage = ({ userId }) => {
     }
 
     return (
-        <div>
+        <div className="container">
+          <div className='sidebar'>
             <Nav onOpenModal={openModal} />
-            <PostModal isOpen={isModalOpen} onClose={closeModal}/>
-            <Posts endpoint={`posts/author/667accc9d3c2e55073561cb6`} />
-
+          </div>
+          <div className='main-content'>
+            <PostModal isOpen={isModalOpen} onClose={closeModal} />
             <div className="profile-header">
-                <div className="profile-pic">
-                    <img src={profilePic} alt="User Profile" />
+              <div className="profile-pic">
+                <img src={profilePic} alt="User Profile" />
+              </div>
+              <div className="user-info">
+                <h2>{user.Username}</h2>
+                <p>{user.Email}</p>
+                <p className="bio">{user.Bio}</p>
+                <div className="followers-following">
+                  <span>Followers: {user.Followers}</span>
+                  <span>Following: {user.Following}</span>
                 </div>
-                <div className="user-info">
-                    <h2>{user.Username}</h2>
-                    <p>{user.Email}</p>
-                    <p className="bio">{user.Bio}</p>
-                    <div className="followers-following">
-                        <span>Followers: {user.Followers}</span>
-                        <span>Following: {user.Following}</span>
-                    </div>
-                </div>
+              </div>
             </div>
+            <div className='posts-container'>
+              <Posts endpoint={`posts/author/667accc9d3c2e55073561cb6`} />
+            </div>
+          </div>
         </div>
-    )
-}
+      )
+
+    }
+      
 
 export default UserPage
