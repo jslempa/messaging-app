@@ -7,10 +7,11 @@ import Posts from '../components/Posts'
 import './UserPage.css'
 
 
-const UserPage = ({ userId }) => {
+const UserPage = ({ token }) => {
     const [user, setUser] = useState([])
     const [error, setError] = useState(null)
     const [isModalOpen, setIsModalOpen] = useState(false)
+    let userToken = localStorage.getItem("token")
 
     const openModal = () => {
         setIsModalOpen(true)
@@ -23,15 +24,21 @@ const UserPage = ({ userId }) => {
     useEffect(() => {
         const getUser = async () => {
             try {
-                const response = await axios.get(`http://localhost:3001/users/id/667accc9d3c2e55073561cb6`)
+                const response = await axios.get(`http://localhost:3001/account`, {
+                    headers: {
+                      "Token": userToken
+                    }
+                  }
+                )
                 setUser(response.data)
+                console.log(response.data._id)
             } catch (err) {
                 setError(err.message)
             }
         };
 
         getUser()
-    }, [userId])
+    }, [token])
     
     console.log(user)
 
@@ -65,7 +72,7 @@ const UserPage = ({ userId }) => {
               </div>
             </div>
             <div className='posts-container'>
-              <Posts endpoint={`posts/author/667accc9d3c2e55073561cb6`} />
+            {user._id ? <Posts endpoint={`posts/author/${user._id}`} /> : <div>Loading posts...</div>}
             </div>
           </div>
         </div>
