@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import homeIcon from '../assets/images/Home.png'
 import addPostIcon from '../assets/images/AddPost.png'
+import Timeline from '../assets/images/Timeline.png'
+import profile from '../assets/images/profile.png'
 
 const Nav = ({ onOpenModal }) => {
   return (
@@ -8,22 +10,22 @@ const Nav = ({ onOpenModal }) => {
       <Link to="/">
         <div className="nav-item">
           <img src={homeIcon} alt='Home' />
-          <span>Home</span>
+          
         </div>
       </Link>
       <button onClick={onOpenModal} className="nav-item">
         <img src={addPostIcon} alt='Create Post' />
-        <span>Add Post</span>
+        
       </button>
       <Link to="/timeline">
         <div className="nav-item">
-          <img src={addPostIcon} alt='Timeline' />
-          <span>Timeline</span>
+          <img src={Timeline} alt='Timeline' />
+      
         </div>
       </Link>
       <Link to="/userprofile">
         <div className="nav-item">
-          <span>User Profile</span>
+        <img src={profile} alt='User Profile' />
         </div>
       </Link>
     </div>

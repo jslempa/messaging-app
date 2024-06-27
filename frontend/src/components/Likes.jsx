@@ -8,7 +8,8 @@ const Likes = (props) => {
             <div>
             <label>+</label>
             <button className='add-like-button'
-                    onClick = {props.addLike}>Like</button>
+                    onClick = {props.addLike}>
+                        <span>+</span>Like</button>
             </div>
         </div>
     )
