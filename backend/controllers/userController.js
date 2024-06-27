@@ -109,7 +109,7 @@ const authenticateUser = async (req, res) => {
 
         const updatedUser = await User.findByIdAndUpdate(user._id, {Token: token})
 
-        return res.status(200).json({token: token})
+        return res.status(200).json({token: token, userid: user._id})
     } catch (error) {
         return res.status(500).json({error: error.message})
     }
