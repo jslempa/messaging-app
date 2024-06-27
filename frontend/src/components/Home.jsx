@@ -21,7 +21,7 @@ const Home = (props) => {
 
     return (
         <div className="home">
-            <Header/>
+            <Header onOpenModal={openModal}/>
             {/* <Nav onOpenModal={openModal} /> */}
             <PostModal isOpen={isModalOpen} onClose={closeModal}/>
             <Posts/>
