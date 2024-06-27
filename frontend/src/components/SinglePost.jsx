@@ -57,7 +57,8 @@ const SinglePost = (props) => {
 
     return (
         <div className='single-post'>
-            <div className='post-single-card' style={{border: '2px solid black'}}>
+            <div className='post-single-card' //style={{border: '2px solid black'}
+            >
                 <h3 className='post-author'>{author}</h3>
                 <p className='post-content'>{props.post.Content}</p>
                 {props.post.Attachments ? <img className='post-image' src={props.post.Attachments}/> : null}

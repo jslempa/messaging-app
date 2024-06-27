@@ -1,96 +1,202 @@
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  font-family: Arial, sans-serif;
+} */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
 }
-
-.profile-header {
+.home {
+  background-color: #f0f2f5;
+  min-height: 100vh;
+  padding-top: 60px; 
+}
+.posts {
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 600px;
+}
+.footer {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+}
+.header {
   display: flex;
   align-items: center;
-  background-color: #f37878;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
 }
-
-.profile-pic {
-  flex: 0 0 100px;
-  margin-right: 20px;
-}
-
-.profile-pic img {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.user-info {
+.header-left {
   flex: 1;
+} 
+.header-logo {
+  height: 120px;
+}
+.header-center {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
-.user-info h2 {
-  margin: 0;
-  font-size: 24px;
-  color: #333;
+.header-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
-
-.user-info p {
-  margin: 5px 0;
-  color: #777;
+.header-icon {
+  margin-left: 20px;
+  position:relative;
+  right: 40px;
+  cursor: pointer;
 }
-
-.user-info .bio {
-  background-color: #d0e7ff;
-  padding: 10px;
+.header-icon img {
+  height: 40px;
+}
+/* .post {
+  background-color: #fff;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
   border-radius: 5px;
-  color: #333;
 }
 
-.followers-following {
+.post .buttons {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
-  padding: 10px;
-  background-color: #ffe0e0;
-  border-radius: 5px;
 }
 
-.followers-following span {
-  font-size: 16px;
-  color: #333;
-}
-.nav {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #e0f7fa;
-  padding: 20px;
-  width: 150px;
-  height: 100vh;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.nav-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 20px 0;
+.post .buttons button {
+  background-color: #e0d4f3;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
   cursor: pointer;
-  text-align: center;
+} */
+
+.single-post {
+  background-color: #fff;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.nav-item img {
-  width: 50px;
-  height: 50px;
+.post-single-card {
+  /* background-color: #fff;
+  padding: 20px; */
+  border: 2px solid black;
+  /* border-radius: 5px; */
 }
 
-.nav-item span {
+.post-author {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  position: relative;
+  left: 200px;
+}
+
+.post-content {
+  font-size: 1.5em;
+  border: solid rgb(204, 204, 204, 0.5);
+
+  margin-bottom: 10px;
+}
+
+.post-image {
+  width: 90%;
+  max-height: 300px;
+  object-fit: cover;
+  border: solid;
+  border-radius: 5%;
+  position: relative;
+  left: 25px;
+  margin-bottom: 10px;
+}
+
+.delete-button {
+  background-color: #e0d4f3;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
   margin-top: 10px;
-  font-size: 16px;
-  color: #00796b;
 }
+
+.comments, .comment-modal {
+  margin-top: 10px;
+}
+
+/* .buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.buttons button {
+  background-color: #e0d4f3;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+} */
+.delete-button {
+  background-color: #ff4d4d;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.likes {
+  display: flex;
+  align-items: center;
+  justify-content:space-around;
+  margin-top: 10px;
+  
+}
+
+.num-likes {
+  font-size: 1em;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.add-like-button {
+  background-color: #e0d4f3;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.add-like-button span {
+  font-size: 0.9em;
+  margin-right: 5px;
+}
+
+  
+
 .post-modal {
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   display: flex;
@@ -124,5 +230,5 @@
 .post-modal .card form {
   display: flex;
   flex-direction: column;
-  gap: 1rem; /* Add space between the textarea and button */
+  gap: 1rem; 
 }

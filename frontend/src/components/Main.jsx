@@ -8,21 +8,22 @@ import Posts from './Posts'
 
 const Main = (props) => {
 
-    const [isModalOpen, setIsModalOpen] = useState(false)
+    // const [isModalOpen, setIsModalOpen] = useState(false)
 
-    const openModal = () => {
-        setIsModalOpen(true)
-    }
+    // const openModal = () => {
+    //     setIsModalOpen(true)
+    // }
   
-    const closeModal = () => {
-        setIsModalOpen(false)
-    }
+    // const closeModal = () => {
+    //     setIsModalOpen(false)
+    // }
 
     return (
         <div className="main">
-            <Nav onOpenModal={openModal} />
+            {/* <Nav onOpenModal={openModal} />
             <PostModal isOpen={isModalOpen} onClose={closeModal}/>
-            <Posts/>
+            <Posts/> */}
+            <Home/>
         </div>
     )
 }
