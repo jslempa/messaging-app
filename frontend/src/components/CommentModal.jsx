@@ -5,7 +5,7 @@ import './CommentModal.css'
 const CommentModal = (props) => {
 
     const [commentContent, setCommentContent] = useState('')
-    const [userID, setUserID] = useState('')
+    let userid = localStorage.getItem('userid')
 
     const handlePost = async (e) => {
         e.preventDefault()
@@ -13,7 +13,7 @@ const CommentModal = (props) => {
         const response = await axios.post('http://localhost:3001/comments',
             {
                 Content: commentContent,
-                Author: userID,
+                Author: userid,
                 ParentPost: props.postId,
                 Likes: 0
             }
@@ -34,13 +34,6 @@ const CommentModal = (props) => {
         <div className='comment-component'>
             <div className='comment-card'>
                 <form onSubmit={handlePost}>
-                    <input 
-                    type='text' 
-                    placeholder='User ID'
-                    value={userID}
-                    onChange={handleUser}
-                    />
-
                     <input
                     type='text'
                     placeholder='Comment'
