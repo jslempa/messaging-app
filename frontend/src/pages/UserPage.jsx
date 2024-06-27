@@ -4,6 +4,7 @@ import profilePic from '../assets/images/profilePic.png'
 import Nav from '../components/Nav'
 import PostModal from '../components/PostModal'
 import Posts from '../components/Posts'
+import './UserPage.css'
 
 
 const UserPage = ({ userId }) => {
@@ -44,10 +45,13 @@ const UserPage = ({ userId }) => {
 
     return (
         <div>
-            <Nav onOpenModal={openModal} />
-            <PostModal isOpen={isModalOpen} onClose={closeModal}/>
+         <div className='content'>
+          <Nav onOpenModal={openModal} />
+          <PostModal isOpen={isModalOpen} onClose={closeModal} />
+          <div className='posts-container'>
             <Posts endpoint={`posts/author/667accc9d3c2e55073561cb6`} />
-
+          </div>
+        </div>
             <div className="profile-header">
                 <div className="profile-pic">
                     <img src={profilePic} alt="User Profile" />
