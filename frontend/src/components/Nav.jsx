@@ -13,7 +13,7 @@ const Nav = ({ onOpenModal }) => {
           
         </div>
       </Link>
-      <button onClick={onOpenModal} className="nav-item">
+        <button onClick={onOpenModal} className="nav-item">
         <img src={addPostIcon} alt='Create Post' />
         
       </button>

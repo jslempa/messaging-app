@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import './PostModal.css'
 
 
 const PostModal = ({isOpen, onClose}) => {
@@ -7,7 +8,7 @@ const PostModal = ({isOpen, onClose}) => {
 
     const [postContent, setPostContent] = useState('')
     const [attachmentURL, setAttachmentURL] = useState('')
-    const [userID, setUserID] = useState('')
+    let userid = localStorage.getItem('userid')
 
     const handlePost = async (e) => {
         e.preventDefault()
@@ -16,7 +17,7 @@ const PostModal = ({isOpen, onClose}) => {
             {
                 Content: postContent,
                 Attachments: attachmentURL,
-                Author: userID,
+                Author: userid,
                 Likes: 0,
                 Comments: []
             })
@@ -42,12 +43,6 @@ const PostModal = ({isOpen, onClose}) => {
         <div className='post-modal'>
             <div className='card'>
                 <form onSubmit={handlePost}>
-                    <input type="text" 
-                    placeholder='User ID'
-                    value={userID}
-                    onChange={handleUser}
-                    />
-
                     <textarea placeholder='Content' 
                     value={postContent}
                     onChange={handleChange}
