@@ -54,7 +54,7 @@ const Comments = (props) => {
                         {authors[comment._id]}: {comment ? comment.Content : null}
                         <button className='delete-comment-button'
                                 id={comment._id}
-                                onClick={deleteComment}>Delete Comment</button>
+                                onClick={deleteComment}>🗑️</button>
                         </li>
                     ))
                 }
@@ -62,4 +62,4 @@ const Comments = (props) => {
         </div>        
     )}
 
-export default Comments
+export default Comments 
