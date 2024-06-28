@@ -9,10 +9,10 @@
   }
   
   .post-single-card {
-    /* background-color: #fff;
-    padding: 20px; */
-    border: 2px solid black;
-    /* border-radius: 5px; */
+    background-color: rgb(255, 255, 255, 0.5);
+    padding: 20px;
+    border: 2px solid rgba(150, 145, 154, 0.5);
+    border-radius: 5px;
   }
   
   .post-author {
@@ -20,6 +20,7 @@
     font-size: 2em;
     font-weight: 700;
     letter-spacing: 4px;
+    text-shadow: 0 0 5px rgb(141, 121, 139, 0.4);
     text-align: center;
     margin-bottom: 10px;
     position: relative;
@@ -29,10 +30,12 @@
     font-family: "Roboto", sans-serif;
     font-weight: 500;
     font-size: 1.5em;
-    letter-spacing: 3px;
+    letter-spacing: 3.3px;
     text-align: center;
-    border: solid rgb(204, 204, 204, 0.5);
-    margin-bottom: 10px;
+    text-shadow: 0 0 3px rgb(0, 0, 0, .3);
+    border: solid rgb(204, 204, 204, 0.3);
+    padding: 20px;
+    margin: 10px 10px 10px 10px;
   }
   
   .post-image {
