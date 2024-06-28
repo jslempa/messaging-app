@@ -13,7 +13,7 @@ Developing a social media app involves creating a platform where users can conne
 * **Search and Discovery:** Search functionality to find users, posts, and content categories.
 * **Following/Followers:** System to follow and be followed by other users.
 
-### Strectch Goal
+### Stretch Goal
 
 * **Messaging System:** Private messaging, group chats, and possibly video calls.
 * **Notifications:** Real-time updates to keep users engaged
