@@ -11,13 +11,15 @@ const SinglePost = (props) => {
     console.log(props.post._id)
 
     const [author, setAuthor] = useState('')
+    const [likes, setLikes] = useState(props.post.Likes)
 
     const addLike = async () => {
         let currentLikes = props.post.Likes
         const res = await axios.put(`http://localhost:3001/posts/${props.post._id}`, {
             Likes: currentLikes + 1
         })
-        window.location.reload()
+        //window.location.reload()
+        setLikes(prevLikes => prevLikes + 1)
     }
 
     const deletePost = async () => {
@@ -32,15 +34,12 @@ const SinglePost = (props) => {
     }
 
     const checkIfOwner = () => {
-        if(props.post.Author == localStorage.getItem("userid")) {
-            return true
-        }
-
-        return false
+        return props.post.Author === localStorage.getItem("userid")
     }
 
     useEffect(() => {
         formatAuthor()
+        console.log(` bal ${likes.toString()}`)
     }, [])
 
     return (
@@ -50,8 +49,7 @@ const SinglePost = (props) => {
                 <h3 className='post-author'>{author}</h3>
                 <p className='post-content'>{props.post.Content}</p>
                 {props.post.Attachments ? <img className='post-image' src={props.post.Attachments}/> : null}
-                <Likes likes={props.post.Likes}
-                       addLike={addLike} />
+                {likes ? <Likes likes={likes.toString()} addLike={addLike} /> : <div>Loading...</div>}
                 <Comments postId={props.post._id}/>    
                 <CommentModal postId={props.post._id}/>
                 {checkIfOwner() ? <button className='delete-button' onClick={deletePost}>Delete Post</button> : null}
