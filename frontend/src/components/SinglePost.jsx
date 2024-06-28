@@ -49,7 +49,7 @@ const SinglePost = (props) => {
                 <h3 className='post-author'>{author}</h3>
                 <p className='post-content'>{props.post.Content}</p>
                 {props.post.Attachments ? <img className='post-image' src={props.post.Attachments}/> : null}
-                {likes ? <Likes likes={likes.toString()} addLike={addLike} /> : <div>Loading...</div>}
+                {likes ? <Likes likes={likes.toString()} addLike={addLike} /> : <Likes likes={likes.toString()} addLike={addLike} />}
                 <Comments postId={props.post._id}/>    
                 <CommentModal postId={props.post._id}/>
                 {checkIfOwner() ? <button className='delete-button' onClick={deletePost}>Delete Post</button> : null}
