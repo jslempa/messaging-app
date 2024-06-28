@@ -4,7 +4,7 @@ import logo from '../assets/images/LU.png'
 import addPostIcon from '../assets/images/AddPost.png'
 import timelineIcon from '../assets/images/Timeline.png'
 import profileIcon from '../assets/images/profile.png'
-import '../App.css'
+
 
 const Header = (props) => {
     return (
@@ -21,9 +21,9 @@ const Header = (props) => {
                 <button onClick={props.onOpenModal} className="header-icon">
                     <img src={addPostIcon} alt='Create Post' />
                 </button>
-                <Link to="/timeline" className='header-icon'>
+                {/* <Link to="/timeline" className='header-icon'>
                     <img src={timelineIcon} alt='Timeline' />
-                </Link>
+                </Link> */}
                 <Link to="/userprofile" className='header-icon'>
                     <img src={profileIcon} alt='User Profile' />
                 </Link>

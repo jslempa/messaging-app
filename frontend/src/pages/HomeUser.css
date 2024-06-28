@@ -43,13 +43,18 @@ body {
     align-items: center;
     justify-content: flex-end;
   }
+  .header-right button {
+    height: 60px;
+    background-color: antiquewhite;
+  }
   .header-icon {
     margin-left: 20px;
     position:relative;
     right: 40px;
     cursor: pointer;
   }
-  .header-icon img {
+  .header-right img {
+    display:inline;
     height: 40px;
   }
   .posts {
