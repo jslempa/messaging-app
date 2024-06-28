@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import './LoginPage.css'
+import logo from '../assets/images/LU.png'
 
 const LoginPage = () => {
     const [username, setUsername] = useState('')
@@ -38,25 +40,28 @@ const LoginPage = () => {
     }
 
     return (
-        <div className='login-card'>
-            <form onSubmit={handleSubmit}>
-                <input
-                    type='text'
-                    placeholder='Username'
-                    value={username}
-                    onChange={handleUsername}
-                />
+        <div className='login-root'>
+            <div className='login-card'>
+                <img src={logo} alt='Link-Up logo' className='header-logo' />
 
-                <input
-                    type='password'
-                    placeholder='Password'
-                    value={password}
-                    onChange={handlePassword}
-                />
+                <form onSubmit={handleSubmit}>
+                    <input
+                        type='text'
+                        placeholder='Username'
+                        value={username}
+                        onChange={handleUsername}
+                    />
 
-                <button type='submit'>Login</button>
-            </form>
-            
+                    <input
+                        type='password'
+                        placeholder='Password'
+                        value={password}
+                        onChange={handlePassword}
+                    />
+
+                    <button type='submit'>Login</button>
+                </form>
+            </div>
         </div>
     )
 }
