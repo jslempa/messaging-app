@@ -31,3 +31,10 @@ form {
     flex-direction: column;
     gap: 1rem; /* Add space between the textarea and button */
 }
+
+input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+}
