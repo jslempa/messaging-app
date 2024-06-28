@@ -68,9 +68,9 @@ body {
     padding: 20px;
     border: 1px solid #807575;
     border-radius: 5px;
-    position: relative;
+    /* position: relative;
     bottom: 850px;
-    left: 600px;
+    left: 600px; */
   }
   /* .footer {
     text-align: center;
