@@ -21,7 +21,7 @@
   bottom: 0;
   margin: auto;
   width: fit-content;
-  height: 50%;
+  height: fit-content;
 }
 
 .post-modal textarea {
