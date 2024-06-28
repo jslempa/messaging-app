@@ -31,6 +31,14 @@ const SinglePost = (props) => {
         console.log(author)
     }
 
+    const checkIfOwner = () => {
+        if(props.post.Author == localStorage.getItem("userid")) {
+            return true
+        }
+
+        return false
+    }
+
     useEffect(() => {
         formatAuthor()
     }, [])
@@ -46,7 +54,7 @@ const SinglePost = (props) => {
                        addLike={addLike} />
                 <Comments postId={props.post._id}/>    
                 <CommentModal postId={props.post._id}/>
-                <button className='delete-button' onClick={deletePost}>Delete Post</button>
+                {checkIfOwner() ? <button className='delete-button' onClick={deletePost}>Delete Post</button> : null}
                 
             </div> 
         </div>

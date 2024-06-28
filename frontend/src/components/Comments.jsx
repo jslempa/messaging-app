@@ -53,9 +53,11 @@ const Comments = (props) => {
                             key={comment._id}
                             style={{border: '2px solid black'}}>
                         {authors[comment._id]}: {comment ? comment.Content : null}
-                        <button className='delete-comment-button'
-                                id={comment._id}
-                                onClick={deleteComment}>🗑️</button>
+                        {comment.Author === localStorage.getItem("userid") && ( // Conditionally render delete button
+                                <button className='delete-comment-button' id={comment._id} onClick={deleteComment}>
+                                    🗑️
+                                </button>
+                            )}
                         </li>
                     ))
                 }
