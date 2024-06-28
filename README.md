@@ -1,4 +1,4 @@
-# messaging-app
+# Messaging-app
 
 Developing a social media app involves creating a platform where users can connect, share content, and engage with each other through features like profiles, posts, messaging, and notifications. This project will focus on building an intuitive and secure app, integrating essential social networking functionalities, and ensuring a seamless user experience.
 
@@ -13,7 +13,7 @@ Developing a social media app involves creating a platform where users can conne
 * **Search and Discovery:** Search functionality to find users, posts, and content categories.
 * **Following/Followers:** System to follow and be followed by other users.
 
-### Stretch Goal
+### Stretch Goals
 
 * **Messaging System:** Private messaging, group chats, and possibly video calls.
 * **Notifications:** Real-time updates to keep users engaged
@@ -29,10 +29,17 @@ Developing a social media app involves creating a platform where users can conne
 
 
 
-
+### Entity Relationship Diagram
 ![ERD](/mockTwitterERD.png)
 
-![ComponentHierarchyDiagram](project3.drawio.png) 
-![wireframe](/User-wireframe.png)
 
-![FrontEndUserPage](https://i.imgur.com/8egmfXF.png) ![log-inPage](https://i.imgur.com/JNCjpmK.png)
+### Component Hierarchy Diagram (first draft)
+![ComponentHierarchyDiagram](project3.drawio.png) 
+
+### Component Hierarchy Diagram (final)
+![ComponentHierarchyDiagramFinal](project3final.drawio.png)
+
+### Wireframes
+![Wireframe](/User-wireframe.png)
+![FrontEndUserPage](https://i.imgur.com/8egmfXF.png)
+![Log-inPage](https://i.imgur.com/JNCjpmK.png)
