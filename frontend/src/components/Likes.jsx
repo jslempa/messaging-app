@@ -1,3 +1,5 @@
+import './Like.css'
+
 const Likes = (props) => {
 
     //console.log(props)

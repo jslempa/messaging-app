@@ -5,6 +5,7 @@ import Nav from '../components/Nav'
 import PostModal from '../components/PostModal'
 import Posts from '../components/Posts'
 import './UserPage.css'
+import { useNavigate } from 'react-router-dom'
 
 
 const UserPage = ({ token }) => {
@@ -12,6 +13,7 @@ const UserPage = ({ token }) => {
     const [error, setError] = useState(null)
     const [isModalOpen, setIsModalOpen] = useState(false)
     let userToken = localStorage.getItem("token")
+    const navigate = useNavigate()
 
     const openModal = () => {
         setIsModalOpen(true)
@@ -22,6 +24,12 @@ const UserPage = ({ token }) => {
     }
 
     useEffect(() => {
+        if(userToken == "") {
+            navigate('/login')
+        }
+    }, [])
+
+    useEffect(() => {
         const getUser = async () => {
             try {
                 const response = await axios.get(`http://localhost:3001/account`, {
@@ -29,7 +37,11 @@ const UserPage = ({ token }) => {
                       "Token": userToken
                     }
                   }
-                )
+                ).catch((error) => {
+                  if(error.response.status == 401) {
+                    navigate('/login')
+                  }
+                })
                 setUser(response.data)
                 console.log(response.data._id)
             } catch (err) {

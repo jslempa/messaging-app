@@ -20,7 +20,6 @@ const Main = (props) => {
 
     return (
         <div className="main">
-            <Posts/>
             <Home/>
         </div>
     )

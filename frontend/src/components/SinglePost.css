@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth@8..144,125&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.single-post {
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .post-single-card {
+    background-color: rgb(255, 255, 255, 0.5);
+    padding: 20px;
+    border: 2px solid rgba(150, 145, 154, 0.5);
+    border-radius: 5px;
+  }
+  
+  .post-author {
+    font-family: "Roboto", sans-serif;
+    font-size: 2em;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-shadow: 0 0 5px rgb(141, 121, 139, 0.4);
+    text-align: center;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  
+  .post-content {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 1.5em;
+    letter-spacing: 3.3px;
+    text-align: center;
+    text-shadow: 0 0 3px rgb(0, 0, 0, .3);
+    border: solid rgb(204, 204, 204, 0.3);
+    padding: 20px;
+    margin: 10px 10px 10px 10px;
+  }
+  
+  .post-image {
+    width: 90%;
+    max-height: 300px;
+    object-fit: cover;
+    border: solid;
+    border-radius: 5%;
+    position: relative;
+    left: 25px;
+    margin-bottom: 10px;
+  }
+  
+  .delete-button {
+    font-size: .8em;
+    background-color: #ed392c;
+    display: flex;
+    align-items: center;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    margin: auto;
+    width: 90px;
+    height: 10px;
+    margin-bottom: 10px;
+    color: #fff;
+    cursor: pointer;
+  }

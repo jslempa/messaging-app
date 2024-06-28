@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
+import './CommentModal.css'
 
 const Comments = (props) => {
 
@@ -51,9 +52,11 @@ const Comments = (props) => {
                         <li className='single-comment'
                             key={comment._id}>
                         {authors[comment._id]}: {comment ? comment.Content : null}
-                        <button className='delete-comment-button'
-                                id={comment._id}
-                                onClick={deleteComment}>🗑️</button>
+                        {comment.Author === localStorage.getItem("userid") && ( // Conditionally render delete button
+                                <button className='delete-comment-button' id={comment._id} onClick={deleteComment}>
+                                    🗑️
+                                </button>
+                            )}
                         </li>
                     ))
                 }
